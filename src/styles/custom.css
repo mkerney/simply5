@@ -1,1 +1,304 @@
+/* common styles */
+*, *:focus {
+    outline: none !important;
+}
 
+/* Landing styles */
+.landing-wrapper {
+    transition: all 0.3s ease-in-out;
+}
+
+.landing-image {
+    animation: image-scale 12s ease-in-out infinite;
+    background: url("../images/coffee-big.png") no-repeat fixed center bottom;
+    background-size: cover;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 767px) {
+    .landing-image {
+        background: url("../images/landing.png") no-repeat fixed center;
+        background-size: cover;
+    }
+}
+
+@keyframes image-scale {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+/* Carousel Styles */
+.item-carousel {
+    transition: all 0.3s ease-in-out;
+}
+
+.landing-wrapper.open-connectivity .item-carousel {
+    transform: scale(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.item-carousel .receipe-item:not(:last-of-type) {
+    margin-right: 15px;
+}
+
+.receipe-item {
+    position: relative;
+}
+
+.receipe-item {
+    position: relative;
+}
+
+.receipe-item:focus,
+.receipe-item:hover,
+.receipe-item:active,
+.receipe-item.active {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.receipe-item:focus:after,
+.receipe-item:hover:after,
+.receipe-item:active:after,
+.receipe-item.active:after {
+    border-color: rgb(93, 102, 195);
+}
+
+.receipe-item:after {
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    content: '';
+    position: absolute;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 40px;
+}
+
+/* Banner Styles */
+.banner-wrapper {
+    transition: all 0.3s ease-in-out;
+}
+
+.landing-wrapper.open-connectivity .banner-wrapper {
+    transform: scale(0);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Search Styles */
+.business-search {
+    top: 900px;
+    transform: scale(0);
+    transition: all 2s cubic-bezier(0.08, 0.76, 0.1, 1.15);
+}
+
+.landing-wrapper.open-connectivity .business-search {
+    top: 30px;
+    transform: scale(1);
+    transition: all 1s cubic-bezier(0.08, 0.76, 0.1, 1.15);
+}
+
+.business-search .company-logo {
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.business-search .search-input {
+    border-radius: 15px;
+    background-color: rgba(188, 188, 188, 0.7);
+}
+
+.business-search .wifi-logo {
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+/* Aside Styles */
+.aside-section {
+    height: 220px;
+    bottom: -20px;
+    transition: height 0.3s ease-in-out;
+    box-shadow: inset 0 -30px 30px 0 rgba(103, 123, 208, 0.4);
+    border-radius: 32px;
+}
+
+.landing-wrapper.open-connectivity .aside-section {
+    height: calc(100vh - 65px);
+    transition: height 0.3s ease-in-out;
+}
+
+.company-sponsor {
+    right: 40px;
+    bottom: 20px;
+}
+
+.company-sponsor small {
+    color: rgb(148, 149, 161);
+    font-size: 10px;
+}
+
+.company-sponsor small img {
+    height: 12px;
+}
+
+.company-intro {
+    color: rgb(159, 159, 159);
+}
+
+.company-name {
+    color: rgb(83, 83, 83);
+}
+
+.btn-connect {
+    box-shadow: 0 2px 15px 0 rgba(103, 123, 208, 0.4);
+    background-color: rgb(103, 123, 208);
+}
+
+/* How To Connect Styles */
+.htc-wrapper {
+    transform: translateY(300px) scale(0);
+    transition: all 0.1s ease-in-out;
+}
+
+.htc-wrapper.open-account {
+    height: 0;
+    transform: translateY(-500px) scale(0) !important;
+    transition: all 0.1s ease-in-out;
+}
+
+.landing-wrapper.open-connectivity .htc-wrapper {
+    transform: translateY(0) scale(1);
+    transition: all 1s ease-in-out;
+}
+
+.htc-wrapper h2 {
+    color: rgb(83, 83, 83);
+}
+
+.htc-wrapper ul li {
+    position: relative;
+}
+
+.htc-wrapper ul li:not(:last-of-type):after {
+    left: 50%;
+    width: calc(100% - 80px);
+    bottom: 0;
+    height: 1px;
+    content: "";
+    position: absolute;
+    transform: translateX(-50%);
+    background-color: rgb(246, 248, 255);
+}
+
+.htc-wrapper ul li:nth-last-child(2):after {
+    display: none;
+}
+
+.htc-wrapper ul li a:hover {
+    background-color: rgb(243, 243, 243);
+}
+
+.htc-wrapper ul li span {
+    color: rgb(84, 84, 84);
+}
+
+.htc-wrapper ul li.employee-connect:before {
+    top: 0;
+    left: 40px;
+    width: 50px;
+    height: 4px;
+    content: "";
+    position: absolute;
+    border-radius: 10px;
+    background-color: rgb(211, 214, 228);
+}
+
+/* Create Account Styles */
+.back-section {
+    top: -45px;
+    left: 40px;
+}
+
+.htc-wrapper + .create-account-wrapper {}
+
+.htc-wrapper.open-account + .create-account-wrapper {
+    height: auto;
+    transform: translateY(0) scale(1);
+}
+
+.create-account-wrapper {
+    height: 0;
+    transform: translateY(300px) scale(0);
+    transition: all 0.1s ease-in-out;
+}
+
+/* .landing-wrapper.open-connectivity .create-account-wrapper {
+    transform: translateY(0) scale(1);
+    transition: all 1s ease-in-out;
+} */
+
+.create-account-wrapper h2 {
+    color: rgb(83, 83, 83);
+}
+
+.create-account-wrapper p {
+    color: rgb(95, 97, 115);
+}
+
+.phone-number {
+    background-color: rgb(243, 243, 243);
+}
+
+.country-selection {
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    border-right: 1px solid rgb(225, 225, 225);
+}
+
+.country-selection span {
+    color: rgb(95, 97, 118);
+}
+
+.phone-number .number-input {
+    color: rgb(95, 97, 118);
+    background-color: transparent;
+}
+
+.flex-separater {
+    width: 50px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: rgb(211, 214, 228);
+}
+
+/* Verify OTP Styles */
+/* .htc-wrapper + .create-account-wrapper {}
+
+.htc-wrapper.open-account + .create-account-wrapper {
+  height: auto;
+  transform: translateY(0) scale(1);
+}
+
+.create-account-wrapper {
+  height: 0;
+  transform: translateY(300px) scale(0);
+  transition: all 0.1s ease-in-out;
+} */
+
+.verify-otp-wrapper h2 {
+    color: rgb(83, 83, 83);
+}
+
+.verify-otp-wrapper p {
+    color: rgb(95, 97, 115);
+}
